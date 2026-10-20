@@ -38,7 +38,7 @@ flowchart LR
 
 The example contains 14 generated frames, including the two endpoint positions.
 
-*Source images: Big Buck Bunny, (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org, CC BY 3.0. The inputs were extracted, cropped, and resized; the displayed sequence is model-generated. [Attribution](data/demo_bunny/SOURCE.md).*
+*Source images: Big Buck Bunny, (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org, CC BY 3.0. The inputs were extracted, cropped, and resized; the displayed sequence is model-generated.*
 
 ## Usage
 

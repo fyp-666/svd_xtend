@@ -51,7 +51,9 @@ service-account*.json
 /tools/connect_video.py
 /tools/sample_eval_frames.py
 /tools/video_to_frames.py
+/tools/prepare_demo.py
 /datasets/dummy_datasets_images.py
+/pipelines/pipeline_stable_video_diffusion.py
 # Historical machine-specific entry points and uncredited sample images.
 /infer_svd_interp_manual.py
 /infer_svd_interp_auto.py
@@ -84,7 +86,6 @@ service-account*.json
 /data/demo_bunny/*
 !/data/demo_bunny/first.png
 !/data/demo_bunny/last.png
-!/data/demo_bunny/SOURCE.md
 
 # Local collaboration notes and reference materials
 /Agent.md
