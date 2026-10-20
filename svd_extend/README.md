@@ -47,34 +47,37 @@ The two independent options expose four combinations:
 
 ## Usage
 
-Create a Conda environment from the project root:
+### Linux setup
 
-```shell
-conda env create -f environment.yml
-conda run -n svd_extend python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
-conda run -n svd_extend python -m pip install -r requirements-inference.txt
+From the `svd_extend/` directory, create a Conda environment and install [requirements.txt](requirements.txt). The dependency versions are a reference configuration, not a validated environment lock.
+
+```bash
+conda create -n svd_extend python=3.10 -y
+conda activate svd_extend
+python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu116
+cp configs/resources.example.json configs/resources.local.json
 ```
 
-The CUDA build requires a compatible NVIDIA driver. These dependencies cover the current inference entries.
+### Inference
 
-Copy [configs/resources.example.json](configs/resources.example.json) to `configs/resources.local.json` and set `base_model_path` to a local [SVD-XT 1.1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1) Diffusers model root containing its model components and weights. Weights are not included. The standard eight-channel checkpoint is sufficient; no additional training is required.
+Edit `configs/resources.local.json` and set `base_model_path` to a local [SVD-XT 1.1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1) Diffusers model root containing its model components and weights. Weights are not included. The standard eight-channel checkpoint is sufficient; no additional training is required.
 
 Generate two clips with concatenation:
 
-```shell
-conda run --no-capture-output -n svd_extend python infer_svd_extend.py --input data/demo.jpg --mode concatenate --segments 2
+```bash
+python infer_svd_extend.py --input data/demo.jpg --mode concatenate --segments 2
 ```
 
 Use overlap with the initial CLIP condition:
 
-```shell
-conda run --no-capture-output -n svd_extend python infer_svd_extend.py --input data/demo.jpg --mode overlap --conditioning initial --segments 2 --overlap-frames 5
+```bash
+python infer_svd_extend.py --input data/demo.jpg --mode overlap --conditioning initial --segments 2 --overlap-frames 5
 ```
 
 The continuation entry defaults to **1024×576**, 25 frames per clip, and 25 denoising steps. It saves an MP4, a preview, a run manifest, and resumable segment checkpoints under `outputs/`. Conditioning FPS and export FPS are configured separately. The single-clip `infer_svd.py` entry retains its **512×320** default.
 
-```shell
-conda run -n svd_extend python infer_svd_extend.py --help
+```bash
+python infer_svd_extend.py --help
 ```
 
 ## Code Structure

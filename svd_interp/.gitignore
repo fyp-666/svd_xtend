@@ -44,7 +44,8 @@ service-account*.json
 # Local regression harness; not part of the inference showcase.
 /tests/
 /requirements-dev.txt
-/requirements-win-cu128.lock.txt
+/requirements-inference.txt
+/requirements-win*.txt
 /tools/check_environment.py
 # Superseded one-off preprocessing scripts and an unused dataset prototype.
 /tools/connect_video.py
@@ -74,6 +75,7 @@ service-account*.json
 !/data/demo_bunny/
 /configs/resources.local.json
 /configs/*.local.*
+/configs/local_env/
 # Only the documented, attributed demo files are published.
 /assets/demo/*
 !/assets/demo/interpolation.gif

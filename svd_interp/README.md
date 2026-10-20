@@ -42,31 +42,34 @@ The example contains 14 generated frames, including the two endpoint positions.
 
 ## Usage
 
-Create a Conda environment from the project root:
+### Linux setup
 
-```shell
-conda env create -f environment.yml
-conda run -n svd_interp python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
-conda run -n svd_interp python -m pip install -r requirements-inference.txt
+From the `svd_interp/` directory, create a Conda environment and install [requirements.txt](requirements.txt). The dependency versions are a reference configuration, not a validated environment lock.
+
+```bash
+conda create -n svd_interp python=3.10 -y
+conda activate svd_interp
+python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu116
+cp configs/resources.example.json configs/resources.local.json
 ```
 
-The CUDA build requires a compatible NVIDIA driver. These commands install the inference dependencies; training requires additional dependencies.
+### Inference
 
-Copy [configs/resources.example.json](configs/resources.example.json) to `configs/resources.local.json` and set the paths to:
+Edit `configs/resources.local.json` and set the paths to:
 
 - [SVD-XT 1.1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1) base components: VAE, image encoder, scheduler, feature extractor, and model index.
 - A compatible trained **nine-channel interpolation checkpoint**, either its root containing `unet/` or the `unet/` directory itself.
 
 Weights are not included. A standard eight-channel SVD checkpoint alone is insufficient for this interpolation pipeline.
 
-```shell
-conda run --no-capture-output -n svd_interp python infer.py --first data/demo_bunny/first.png --last data/demo_bunny/last.png
+```bash
+python infer.py --first data/demo_bunny/first.png --last data/demo_bunny/last.png
 ```
 
 The default output is 512×320 with 14 total frames and 30 denoising steps. The command saves generated PNG frames, an MP4, a contact sheet, and a run manifest. Model-conditioning FPS and export FPS are configured separately.
 
-```shell
-conda run -n svd_interp python infer.py --help
+```bash
+python infer.py --help
 ```
 
 ## Code Structure

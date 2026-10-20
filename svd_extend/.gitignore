@@ -50,6 +50,8 @@ desktop.ini
 !/data/demo.jpg
 /assets/
 /configs/*.local.*
+/configs/local_env/
+/requirements-win*.txt
 
 # Local collaboration notes and reference materials
 /Agent.md
