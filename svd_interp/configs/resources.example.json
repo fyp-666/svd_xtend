@@ -1,0 +1,5 @@
+{
+  "base_model_path": "pretrained_weights/stable-video-diffusion-img2vid-xt-1-1",
+  "interpolation_checkpoint_path": "checkpoints/interpolation/checkpoint-50000",
+  "output_dir": "outputs"
+}

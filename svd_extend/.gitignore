@@ -1,0 +1,76 @@
+# Local environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.pytest_cache/
+.cache/
+.huggingface/
+.conda/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+*.swp
+*~
+*.log
+# External weights, training state, and generated outputs
+/pretrained_weights/
+/outputs_aistudio/
+/outputs/
+/checkpoints/
+/runs/
+/logs/
+/wandb/
+/tmp/
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.bin
+*.npz
+*.incomplete
+*.mp4
+*.avi
+*.mov
+# Keep only the input used by the current README; other samples stay local
+/data/*
+!/data/demo.jpg
+/assets/
+/configs/*.local.*
+
+# Local collaboration notes and reference materials
+/Agent.md
+/Task.md
+/MOVIEDREAMER.pdf
+/docs/original/
+/archive/
+/docs/engineering_stages.md
+
+# Historical entry points and utilities are not part of the current inference path
+/infer_svd_auto*.py
+/infer_svd_auto*.sh
+/pipelines/pipeline_stable_video_diffusion_overlap.py
+/datasets/
+/tools/utils.py
+/tools/connect_video.py
+/tools/video_to_frames.py
+/tools/sample_eval_frames.py
+
+# Keep the model license, not local copies of upstream model metadata
+/docs/model_metadata/*
+!/docs/model_metadata/base_svd_xt_1_1/
+/docs/model_metadata/base_svd_xt_1_1/*
+!/docs/model_metadata/base_svd_xt_1_1/LICENSE

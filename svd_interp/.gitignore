@@ -1,0 +1,100 @@
+# Local environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.pytest_cache/
+.cache/
+.huggingface/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+# Local credentials and cloud SDK state
+.secrets/
+.gcloud/
+credentials*.json
+service-account*.json
+*.pem
+*.key
+# External weights, training state, and generated outputs
+/pretrained_weights/
+/outputs_aistudio/
+/outputs/
+/checkpoints/
+/runs/
+/logs/
+/wandb/
+/tmp/
+# Local regression harness; not part of the inference showcase.
+/tests/
+/requirements-dev.txt
+/requirements-win-cu128.lock.txt
+/tools/check_environment.py
+# Superseded one-off preprocessing scripts and an unused dataset prototype.
+/tools/connect_video.py
+/tools/sample_eval_frames.py
+/tools/video_to_frames.py
+/datasets/dummy_datasets_images.py
+# Historical machine-specific entry points and uncredited sample images.
+/infer_svd_interp_manual.py
+/infer_svd_interp_auto.py
+/infer_svd_interp_auto.sh
+/infer_svd_interp_list.py
+/infer_svd.py
+/train.sh
+/assets/*.png
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.bin
+*.incomplete
+*.mp4
+*.avi
+*.mov
+!/assets/demo/interpolation.mp4
+# Keep attributed demo inputs; historical local samples remain private.
+/data/*
+!/data/demo_bunny/
+/configs/resources.local.json
+/configs/*.local.*
+# Only the documented, attributed demo files are published.
+/assets/demo/*
+!/assets/demo/interpolation.gif
+!/assets/demo/interpolation.mp4
+!/assets/demo/contact_sheet.jpg
+/data/demo_bunny/*
+!/data/demo_bunny/first.png
+!/data/demo_bunny/last.png
+!/data/demo_bunny/SOURCE.md
+
+# Local collaboration notes and reference materials
+/Agent.md
+/Task.md
+/docs/interview_notes.zh-CN.md
+/assets/demo/run.json
+/FRAMER.pdf
+/docs/original/
+/archive/
+# Model metadata snapshots are reference material, not runtime resources.
+# Retain the license linked by README.
+/docs/model_metadata/*
+!/docs/model_metadata/base_svd_xt_1_1/
+/docs/model_metadata/base_svd_xt_1_1/*
+!/docs/model_metadata/base_svd_xt_1_1/LICENSE
