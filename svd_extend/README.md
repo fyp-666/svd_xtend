@@ -57,7 +57,7 @@ conda run -n svd_extend python -m pip install -r requirements-inference.txt
 
 The CUDA build requires a compatible NVIDIA driver. These dependencies cover the current inference entries.
 
-Copy [configs/resources.example.json](configs/resources.example.json) to `configs/resources.local.json` and set `base_model_path` to a local **SVD-XT 1.1 Diffusers model root** containing its model components and weights. Weights are not included. The standard eight-channel checkpoint is sufficient; no additional training is required.
+Copy [configs/resources.example.json](configs/resources.example.json) to `configs/resources.local.json` and set `base_model_path` to a local [SVD-XT 1.1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1) Diffusers model root containing its model components and weights. Weights are not included. The standard eight-channel checkpoint is sufficient; no additional training is required.
 
 Generate two clips with concatenation:
 
@@ -89,6 +89,3 @@ conda run -n svd_extend python infer_svd_extend.py --help
 | `tools/svd_overlap.py` | CPU latent trajectories and compatibility checks |
 | `configs/` | Resource configuration template |
 | `data/demo.jpg` | Example input image |
-| `docs/model_metadata/base_svd_xt_1_1/LICENSE` | Base-model license terms |
-
-Model usage is subject to the included [license terms](docs/model_metadata/base_svd_xt_1_1/LICENSE).

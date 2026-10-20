@@ -54,7 +54,7 @@ The CUDA build requires a compatible NVIDIA driver. These commands install the i
 
 Copy [configs/resources.example.json](configs/resources.example.json) to `configs/resources.local.json` and set the paths to:
 
-- SVD base components: VAE, image encoder, scheduler, feature extractor, and model index.
+- [SVD-XT 1.1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1) base components: VAE, image encoder, scheduler, feature extractor, and model index.
 - A compatible trained **nine-channel interpolation checkpoint**, either its root containing `unet/` or the `unet/` directory itself.
 
 Weights are not included. A standard eight-channel SVD checkpoint alone is insufficient for this interpolation pipeline.
@@ -80,5 +80,3 @@ conda run -n svd_interp python infer.py --help
 | `tools/` | Input preparation, output handling, and utilities |
 | `configs/` | Resource configuration template |
 | `assets/demo/` | Generated example |
-
-[Model license](docs/model_metadata/base_svd_xt_1_1/LICENSE).

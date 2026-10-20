@@ -69,8 +69,5 @@ desktop.ini
 /tools/video_to_frames.py
 /tools/sample_eval_frames.py
 
-# Keep the model license, not local copies of upstream model metadata
-/docs/model_metadata/*
-!/docs/model_metadata/base_svd_xt_1_1/
-/docs/model_metadata/base_svd_xt_1_1/*
-!/docs/model_metadata/base_svd_xt_1_1/LICENSE
+# Keep model metadata snapshots as local reference material.
+/docs/model_metadata/
